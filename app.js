@@ -15,30 +15,31 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
-// 1. 데이터 정의 (엑셀 원본 텍스트와 100% 동일하게 수정)
+// 1. 데이터 정의 (10과목, 17단계 일정)
 const modules = [
     "1. 제작기획", "2. 사전제작", "3. 슈퍼바이징", "4. 모델링", "5. 애니메이션", 
     "6. 앨리먼트+디자인", "7. 이펙트", "8. 라이팅", "9. 컴포지팅", "10. 제작 후 관리"
 ];
 
+// 🌟 수정된 부분: 엑셀 파일과 똑같은 세부 단계 (줄바꿈 <br> 적용)
 const stages = [
-    "개발 계획서 제출 및 승인완료", "원고집필 시작", "초고본 집필", "초고본 제출", "초고본 검토", 
+    "개발 계획서 제출<br>및 승인완료", "원고집필 시작", "초고본 집필", "초고본 제출", "초고본 검토", 
     "1차 검토 회의", "완성본 집필", "완성본 제출", "완성본 검토", "2차 회의", 
-    "최종본 집필 및 완성도", "최종본 제출", "최종 윤문 및 편집", "최종본 검수(적합/부적합)", 
-    "학습모듈 최종본 처리", "용역 결과물 제출", "사업계약 마무리 및 종료"
+    "최종본 집필 및<br>완성도", "최종본 제출", "최종 윤문 및<br>편집", "최종본 검수<br>(적합/부적합)", 
+    "학습모듈<br>최종본 처리", "용역 결과물<br>제출", "사업계약 마무리<br>및 종료"
 ];
 
 const totalRows = modules.length;
 const totalCols = stages.length;
 
-// 2. 표 뼈대 그리기 (엑셀과 동일한 병합 및 제목 적용)
+// 2. 표 뼈대 그리기
 function renderTable() {
     const dateRow = document.getElementById("date-row");
     const stageRow = document.getElementById("stage-row");
     const tbody = document.getElementById("table-body");
     const footerRow = document.getElementById("footer-row");
     
-    // 🌟 엑셀 원본과 똑같이 상단 헤더 적용
+    // 🌟 수정된 부분: 엑셀 파일과 완벽하게 일치하는 칸 병합 및 제목
     dateRow.innerHTML = `
         <th>NO</th>
         <th>과목</th>
