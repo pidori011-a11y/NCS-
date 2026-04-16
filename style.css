@@ -16,7 +16,7 @@ th:nth-child(3), td:nth-child(3) { position: sticky; left: 160px; background-col
 
 /* 진행률 행/열 디자인 */
 .progress-col { font-weight: bold; color: #e74c3c; background-color: #fdf2f0 !important; position: sticky; right: 0; z-index: 4;}
-#footer-row td { background-color: #e8f4f8; font-weight: bold; position: sticky; bottom: 0; z-index: 3;}
+#footer-row td { background-color: #f8f9fa; font-weight: bold; position: sticky; bottom: 0; z-index: 3;}
 
 /* 담당자 입력칸 */
 input[type="text"] { width: 80px; padding: 5px; text-align: center; border: 1px solid #ccc; border-radius: 4px; }
