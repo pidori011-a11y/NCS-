@@ -39,11 +39,11 @@ function renderTable() {
     const tbody = document.getElementById("table-body");
     const footerRow = document.getElementById("footer-row");
     
-    // 🌟 수정된 부분: 엑셀 파일과 완벽하게 일치하는 칸 병합 및 제목
+    // 🌟 수정된 부분: NO, 과목, 담당자, 맨 끝 진행률 칸에 rowspan="2" 추가
     dateRow.innerHTML = `
-        <th>NO</th>
-        <th>과목</th>
-        <th>과목(담당자)</th>
+        <th rowspan="2">NO</th>
+        <th rowspan="2">과목</th>
+        <th rowspan="2">과목(담당자)</th>
         <th>5월</th>
         <th>5월</th>
         <th>6월</th>
@@ -54,7 +54,7 @@ function renderTable() {
         <th>10월 16일(금)</th>
         <th colspan="4">10월</th>
         <th>~11/12(목) 계약 종료</th>
-        <th class="progress-col">과목별<br>작업진행률</th>
+        <th rowspan="2" class="progress-col">과목별<br>작업진행률</th>
     `;
     
     // 상단 2줄 (세부 단계)
