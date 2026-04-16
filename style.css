@@ -1,0 +1,27 @@
+body { font-family: 'Malgun Gothic', sans-serif; background-color: #f4f7f6; margin: 0; padding: 20px; }
+.header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.total-progress { font-size: 24px; font-weight: bold; color: #2c3e50; background: #e8f4f8; padding: 10px 20px; border-radius: 8px; }
+.table-container { overflow: auto; height: 80vh; background: white; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+table { border-collapse: collapse; width: max-content; }
+th, td { border: 1px solid #ddd; padding: 10px; text-align: center; white-space: nowrap; font-size: 14px;}
+
+/* 상단 헤더 2줄 고정 */
+thead th { background-color: #2c3e50; color: white; position: sticky; top: 0; z-index: 3; font-weight: normal; }
+thead tr:nth-child(2) th { top: 40px; } /* 두 번째 헤더 줄 위치 */
+
+/* 왼쪽 NO, 과목, 담당자 고정 */
+th:nth-child(1), td:nth-child(1) { position: sticky; left: 0; background-color: #f8f9fa; z-index: 4; font-weight: bold; }
+th:nth-child(2), td:nth-child(2) { position: sticky; left: 40px; background-color: #f8f9fa; z-index: 4; font-weight: bold;}
+th:nth-child(3), td:nth-child(3) { position: sticky; left: 160px; background-color: #f8f9fa; z-index: 4; }
+
+/* 진행률 행/열 디자인 */
+.progress-col { font-weight: bold; color: #e74c3c; background-color: #fdf2f0 !important; position: sticky; right: 0; z-index: 4;}
+#footer-row td { background-color: #e8f4f8; font-weight: bold; position: sticky; bottom: 0; z-index: 3;}
+
+/* 담당자 입력칸 */
+input[type="text"] { width: 80px; padding: 5px; text-align: center; border: 1px solid #ccc; border-radius: 4px; }
+
+/* 체크박스 디자인 */
+input[type="checkbox"] { transform: scale(1.5); cursor: pointer; }
+input[type="checkbox"]:disabled { cursor: not-allowed; opacity: 0.3; }
+.disabled-cell { background-color: #f0f0f0; }
