@@ -43,11 +43,25 @@ function renderTable() {
     const tbody = document.getElementById("table-body");
     const footerRow = document.getElementById("footer-row");
     
-    // 상단 1줄 (날짜)
-    dateRow.innerHTML = `<th rowspan="2" style="z-index: 5;">NO</th><th rowspan="2" style="z-index: 5;">과목</th><th rowspan="2" style="z-index: 5;">담당자</th>` 
-        + dates.map(d => `<th>${d}</th>`).join('') + `<th rowspan="2" class="progress-col" style="z-index: 5;">과목별<br>진행률</th>`;
+    // 🌟 수정된 부분: 상단 1줄 (날짜 셀 병합 적용)
+    dateRow.innerHTML = `
+        <th>NO</th>
+        <th>과목</th>
+        <th>담당자</th>
+        <th>5월</th>
+        <th>5월</th>
+        <th>6월</th>
+        <th>7월 3일(금)</th>
+        <th colspan="3">7월 중순~8월 중순</th>
+        <th>8월 14일(금)</th>
+        <th colspan="3">8월 중순~9월 중순</th>
+        <th>10월 16일(금)</th>
+        <th colspan="4">10월</th>
+        <th>~11/12(목) 계약 종료</th>
+        <th class="progress-col">과목별<br>작업진행률</th>
+    `;
     
-    // 상단 2줄 (단계)
+    // 상단 2줄 (세부 단계)
     stageRow.innerHTML = stages.map(s => `<th>${s}</th>`).join('');
 
     // 본문 (과목 10개)
