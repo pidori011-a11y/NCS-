@@ -5,32 +5,34 @@ body { font-family: 'Malgun Gothic', sans-serif; background-color: #f4f7f6; marg
 table { border-collapse: collapse; width: max-content; }
 th, td { border: 1px solid #ddd; padding: 10px; text-align: center; white-space: nowrap; font-size: 14px;}
 
-/* 상단 헤더 2줄 고정 */
-thead th { background-color: #2c3e50; color: white; position: sticky; top: 0; z-index: 3; font-weight: normal; }
-thead tr:nth-child(2) th { top: 40px; } /* 두 번째 헤더 줄 위치 */
+/* 🌟 상단 헤더 전체 통일 (배경 남색, 글씨 흰색) 🌟 */
+thead th { background-color: #2c3e50 !important; color: white !important; position: sticky; top: 0; z-index: 5; font-weight: normal; }
+thead tr:nth-child(2) th { top: 41px; } /* 두 번째 헤더 줄 위치 (스크롤 고정) */
 
-/* 왼쪽 NO, 과목, 담당자 고정 */
-th:nth-child(1), td:nth-child(1) { position: sticky; left: 0; background-color: #f8f9fa; z-index: 4; font-weight: bold; }
-th:nth-child(2), td:nth-child(2) { position: sticky; left: 40px; background-color: #f8f9fa; z-index: 4; font-weight: bold;}
-th:nth-child(3), td:nth-child(3) { position: sticky; left: 160px; background-color: #f8f9fa; z-index: 4; }
+/* 상단 헤더의 왼쪽 고정 열 (남색 유지, 스크롤 겹침 방지) */
+thead tr:nth-child(1) th:nth-child(1) { position: sticky; left: 0; z-index: 7 !important; }
+thead tr:nth-child(1) th:nth-child(2) { position: sticky; left: 40px; z-index: 7 !important; }
+thead tr:nth-child(1) th:nth-child(3) { position: sticky; left: 160px; z-index: 7 !important; }
 
-/* 🌟 우측 진행률 행/열 디자인 수정 부분 🌟 */
+/* 🌟 본문의 왼쪽 고정 열 (가독성을 위해 밝은 회색 유지) 🌟 */
+tbody td:nth-child(1) { position: sticky; left: 0; background-color: #f8f9fa; z-index: 4; font-weight: bold; }
+tbody td:nth-child(2) { position: sticky; left: 40px; background-color: #f8f9fa; z-index: 4; font-weight: bold;}
+tbody td:nth-child(3) { position: sticky; left: 160px; background-color: #f8f9fa; z-index: 4; }
+
+/* 우측 진행률 행/열 디자인 */
 .progress-col { position: sticky; right: 0; }
-/* 상단 헤더칸: 배경 남색, 글씨 흰색 */
-th.progress-col { background-color: #2c3e50 !important; color: white !important; z-index: 6 !important; }
-/* 본문 내용칸: 배경 연분홍, 글씨 빨강 */
+thead tr:nth-child(1) th:last-child { z-index: 7 !important; } /* 우측 상단 모서리 고정 */
+
+/* 본문 진행률칸: 배경 연분홍, 글씨 빨강 */
 td.progress-col { font-weight: bold; color: #e74c3c; background-color: #fdf2f0 !important; z-index: 4; }
 
 /* 하단 단계별 진행률 */
-#footer-row td { background-color: #e8f4f8; font-weight: bold; position: sticky; bottom: 0; z-index: 3;}
-/* 우측 하단 총 진행률 칸 */
-#footer-grand-total { position: sticky; right: 0; background-color: #d1ecf1 !important; color: #0c5460; z-index: 5 !important;}
+#footer-row td { background-color: #e8f4f8; font-weight: bold; position: sticky; bottom: 0; z-index: 6;}
+#footer-grand-total { position: sticky; right: 0; background-color: #d1ecf1 !important; color: #0c5460; z-index: 7 !important;}
 
-/* 담당자 입력칸 */
+/* 입력칸 및 체크박스 */
 input[type="text"] { width: 80px; padding: 5px; text-align: center; border: 1px solid #ccc; border-radius: 4px; outline: none; }
 input[type="text"]:focus { border-color: #3498db; }
-
-/* 체크박스 디자인 */
 input[type="checkbox"] { transform: scale(1.5); cursor: pointer; }
 input[type="checkbox"]:disabled { cursor: not-allowed; opacity: 0.3; }
 .disabled-cell { background-color: #f0f0f0; }
